@@ -28,13 +28,13 @@ export const createNewWordRequestSchema = Yup.object().shape({
   en: Yup.string()
     .required('New word in English is required')
     .matches(
-      /^[a-zA-Z\- ]+$/,
+      /\b[A-Za-z'-]+(?:\s+[A-Za-z'-]+)*\b/,
       'English word must only contain letters, hyphens, or spaces (e.g., know-knew-known)'
     ),
   ua: Yup.string()
     .required('New word in Ukrainian is required')
     .matches(
-      /^[а-яА-ЯёЁіІїЇєЄґҐ\'\- ]+$/,
+      /^(?![A-Za-z])[А-ЯІЄЇҐґа-яієїʼ\s]+$/u,
       'Ukrainian word must only contain Cyrillic letters, hyphens, apostrophes, or spaces'
     ),
   category: Yup.string()
