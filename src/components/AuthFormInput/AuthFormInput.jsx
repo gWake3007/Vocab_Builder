@@ -1,5 +1,7 @@
 import { ErrorMessage, Field } from 'formik';
 import { useId, useState } from 'react';
+import { HiOutlineEye, HiOutlineEyeOff } from 'react-icons/hi';
+
 import style from './AuthFormInput.module.css';
 
 const AuthFormInput = ({ errors, touched, placeholder, type }) => {
@@ -33,7 +35,13 @@ const AuthFormInput = ({ errors, touched, placeholder, type }) => {
           type="button"
           className={style.btnHide}
           onClick={() => setShowPassword(!showPassword)}
-        ></button>
+        >
+          {showPassword ? (
+            <HiOutlineEye size={16} />
+          ) : (
+            <HiOutlineEyeOff size={16} />
+          )}
+        </button>
       )}
     </div>
   );
