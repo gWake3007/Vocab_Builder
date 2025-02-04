@@ -1,10 +1,12 @@
 import clsx from 'clsx';
 import style from './RegisterForm.module.css';
-import { Formik, Form, Field, ErrorMessage } from 'formik';
-import { useId } from 'react';
+import { Formik, Form } from 'formik';
 import { useDispatch } from 'react-redux';
+import { useLocation } from 'react-router-dom';
+import AuthFormInput from '../AuthFormInput/AuthFormInput.jsx';
 
 const RegisterForm = () => {
+  const { pathname } = useLocation();
   const dispatch = useDispatch();
 
   const initialValues = {
@@ -20,9 +22,9 @@ const RegisterForm = () => {
       <Formik>
         <Form>
           <div>
-            <label htmlFor=""></label>
-            <Field></Field>
-            <ErrorMessage></ErrorMessage>
+            <AuthFormInput />
+            <AuthFormInput />
+            <AuthFormInput />
           </div>
         </Form>
       </Formik>
