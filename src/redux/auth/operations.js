@@ -9,3 +9,7 @@ const setAuthHeader = token => {
 };
 
 let hasShownToast = false;
+
+export const setupAxiosInterceptors = dispatch => {
+  axios.interceptors.response.use();
+};
